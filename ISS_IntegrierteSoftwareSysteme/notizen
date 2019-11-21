@@ -1,0 +1,55 @@
+was ist das user commitment??
+
+------------------------maximierung der gewinnung der energiererzeugung--------------------------
+
+stromerzeugung. wie sachen ans netz gehen?
+mathematische optimierungsprobleme
+minimierung der kosten
+energiebedarf decken
+schwierig elektrische energie zu speicehrn
+-> veränderung im verbrauch muss mit veränderung in der produktion einhergehen
+
+
+-große anzahl der einheiten
+-starke varianz in der art der einheiten
+-geografisch weit verteilt->reaktionszeit ebrücksichtigen->leistungsflussberechnung
+
+hochfahren einiger systeme kann viel zeit beanspruche-> muss bereits am vortag geplant werden
+
+verwaltung und simulation von stromversorgungssystemen
+
+------elemente d. probleme:
+-zeithorizont. abtastung alle 30min
+-erzeugungseinheiten
+-darstellung des netzes
+-Lastprofil(jedem zeitpunkt jeder knotenzu liefernde nettomenge)
+-zuverlässigkeitsbeschränkung(falls unvorhergesehene ereignisse)
+-finanzielle/ regulatorische bedingungen (marktbedingungen)
+
+------elemente d. zu treffenden entscheidungen
+-verpflichtungsentscheidung(ob einheit energie produzziert)
+-produktionsentscheidungen(wie viel produzier ein gerät zu zeitpunkt)
+-nutzentschieungen(wie viel fließt -in welche richtung- wo und wann)
+
+------elemente
+-wer verwaltet? konkurrenz
+-versch. arten der energieerzeugern
+-modulierbarkeit der menge der erzeugten energie (unabhängig von äußeren eiflüsse, z.B. wetter)
+-veränderbarkeit der funktionsweise der stromnetzes
+
+----------------------------------------------------folie1--------------------------------------
+
+---------thermal system unit types-------
+-base loaded(iimerd da)
+-cycling(abhängig von äußeren faktoren)
+-peaking(entweder ganz oder gar nicht)
+
+
+economic dispatch??
+systemlast?
+spinnreserve: das was noch produziert werden kann, falls nötig, ohne neues kraftwerk in kraft zu nehmen
+
+
+
+
+

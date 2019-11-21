@@ -1,0 +1,7 @@
+\babel@toc {ngerman}{}
+\contentsline {section}{\numberline {1}Notes to Papers}{1}
+\contentsline {subsection}{\numberline {1.1}Paper 14}{1}
+\contentsline {subsection}{\numberline {1.2}Paper 15}{2}
+\contentsline {subsection}{\numberline {1.3}Paper 17}{3}
+\contentsline {subsection}{\numberline {1.4}Paper 21}{3}
+\contentsline {subsection}{\numberline {1.5}Paper 22}{3}

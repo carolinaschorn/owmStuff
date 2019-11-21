@@ -1,0 +1,255 @@
+\documentclass[a4paper,oneside,12pt,titlepage]{scrartcl}   %Grundeinstellungen
+%
+% Technische Universitaet Berlin
+% Fachgebiet fuer Elektronische Mess- und Diagnosetechnik
+% Vorlage fuer Protokoll zum Praktikum Grundlagen der elektronischen Messtechnik
+% Berlin Oktober 2012
+% Erstellt von Elvira Fleig und Sebastian Nowoisky
+%
+%Pakete bei Bedarf auskommentieren
+\usepackage[ngerman]{babel}
+\usepackage[utf8]{inputenc}
+%!!! Es könnte sein, dass ihr eine andere Kodierung braucht. Wenn ihr Probleme mit der Anzeige von Umlauten habt, probiert es mit "latin1" (Windows), "applemac" (Mac OS) oder "utf8" (Unix).!!!
+\usepackage{amsfonts}
+\usepackage{amsmath}
+\usepackage{amssymb}
+%\usepackage{siunitx}
+%\usepackage{SIunits}
+\usepackage[amssymb]{SIunits} 
+
+\renewcommand{\familydefault}{\sfdefault} 
+\usepackage{graphicx} 
+\usepackage{subfigure}                         
+\usepackage{float}
+\usepackage[section]{placeins}
+\renewcommand{\topfraction}{0.85}
+\renewcommand{\textfraction}{0.1}
+\renewcommand{\floatpagefraction}{0.75}
+%BibTex nützlich zum Zitieren. Kann bei Nichtgebrauch auch auskommentiert werden.
+\usepackage{cite}
+%Colorpackage
+\usepackage[usenames,dvipsnames]{xcolor}
+%Listings um Scilabquellcode leichter einzufügen
+
+\usepackage{listings}
+
+\lstset{%
+	basicstyle=\scriptsize\ttfamily,
+	keywordstyle=\bfseries\ttfamily\color{NavyBlue},
+	stringstyle=\color{Rhodamine}\ttfamily,
+	commentstyle=\color{Green}\ttfamily,
+	emph={square}, 
+	emphstyle=\color{blue}\texttt,
+	emph={[2]root,base},
+	emphstyle={[2]\color{yac}\texttt},
+	language=Python,%
+	tabsize=2,%
+	basicstyle=\footnotesize\ttfamily,%
+	numbers=left,%
+	numberfirstline,%
+	breaklines=true,%
+	breakatwhitespace=true,%
+	linewidth=\textwidth,%
+	xleftmargin=0.075\textwidth,%
+	frame=tlrb,%
+	captionpos=b%
+}
+
+
+%Header Definitionen
+\usepackage{fancyhdr}
+\renewcommand{\headrulewidth}{0.5pt}
+\renewcommand{\footrulewidth}{0.5pt}
+\voffset26pt 
+\parskip6pt
+\usepackage{setspace}
+\onehalfspacing
+
+%___ÜBERSICHT_____________________________________________________
+
+%Hier beginnt das Dokument
+\begin{document}
+	\pagenumbering{roman}
+	
+	\titlehead
+	{
+		\begin{tabular}{ll}
+			\begin{minipage}{0.5\textwidth}
+				\begin{figure}[H]
+					\raggedright
+					
+				\end{figure}
+			\end{minipage}
+			\begin{minipage}{0.5\textwidth}
+				\begin{figure}[H]
+					\raggedleft
+					
+				\end{figure}
+			\end{minipage}
+		\end{tabular}\\
+		\\
+		\small
+		{
+			Modul: Intelligent Software Systems\\
+			Topic: A survey of stochastic optimization techniques for the unit commitment problem\\
+			
+			Supervisor: Ogun Yurdakul\\
+			WS 2019/20}
+		
+	}
+	
+	\title {Summary of Literature}
+	\subtitle{Part 1}
+	\author{Carolina Schorn (392137)}
+	
+	\date{\today\\*[60pt]}
+	
+	\maketitle
+	
+	\thispagestyle{empty}
+	
+	\newpage
+	
+	%Einstellungen zur Kopf- und Fußzeile
+	\pagestyle{fancy}
+	\fancyhead[L]{Carolina Schorn}	%Head = oben, foot = unten mit jeweiliger Option [L,C,R]
+	\fancyhead[R]{Summary of Literatur, Part 1}
+	
+	
+	\tableofcontents
+	\newpage
+	
+	
+	\pagenumbering{arabic}
+	
+	%___THEORIE_____________________________________________________
+	
+	\section{Notes to Papers}
+	\label{sec:Notes to Papers}
+	
+	\subsection{Paper 14}
+	\label{subsec:paper14}
+	
+	\begin{description}
+		
+	\item[Title of Paper] Data-Driven Adaptive Robust Unit Commitment
+	Under Wind Power Uncertainty: A Bayesian
+	Nonparametric Approach \cite{8603781}
+	
+	Adaptive Robust Optimierung
+	für Integration von Windenergie
+	Dirichlet-Prozessgemischmodell
+	datengetriebener Unsicherheitssatz -> unsicherheitssatz ermittelt: steht für alle unsicherheiten zusammengefasst
+	
+	Ziel: robustes UC-Modell finden(mithilfe von Unsicherheitssatz und Windleistungsprognosen)
+
+	
+		\item[Mathematical Formulation]
+		Two-Stage adaptive robust UC model Model 
+		\begin{itemize}
+			\item First Stage: Commitment Status of Generators
+			\item Second Stage: Dispatch Decision of conventional Genrators and renewable wind power
+			\item Goal: Minimize total operating cost
+			\item Disadvantages: 
+			\begin{itemize}
+				\item No full use of complex uncertainty data information
+				\item Does not account correlation
+				\item Does not account asymmetry
+				\item Does not account multimodal nature of wind power forecast errors
+				\item Limited modeling flexibility
+				\item $\rightarrow$ Remedy: Data driven adaptive robust unit commitment optimization framework
+			\end{itemize}
+		\end{itemize}
+		\item[Data-Driven Adaptive Robust Unit Commitment Optimization Framework] und Text dahinter
+		\begin{description}
+			\item[Dirichlet Process Mixture Model]
+			\begin{itemize}
+				\item stochastic process
+				\item Probabillity distirbution over distributions
+				\item Dirichlet distributed finite dimensional marginal distributions
+				\item Motivation:
+				\begin{itemize}
+					\item model distributions over observed data
+					\item unbounded complexity: underfitting is mitigated
+				\end{itemize}
+				\item limited by the fact that generalizations from it are discrete distributions
+			\end{itemize}
+		
+			\item[Data-Driven Uncertainty Set] Based on posterior predictive distribution
+			\item random vector: future wind forecast errors
+			\item self adaptive to underlying complexity and structure of given data
+			\item[Data-Driven Robust Unit Commitment Model]
+			\item[Solution Methodology]
+			\begin{itemize}
+				\item multilevel optimization structure \& nonconvex nature of the proposed uncertainty set $\rightarrow$ spezific solution algorythm needed
+				\item reduce four-level optimazation problem into single-lebel full master problem (enumeration of all extreme points)
+				\item hard to calculate (large number of induced UC contraints)
+				\item $\rightarrow$ partial enumeration scheme of extreme pointss
+				\item identify worst-case wind forecast error scenario
+				\item compare optimal values of single subproblems to get largest one 
+			\end{itemize}
+		
+		\end{description}
+		\item[Computational Experiments]
+		\item Studies on six-bus and IEEE 118-bus systems
+		\begin{description}
+			\item[Illustrative Six-Bus System]
+			\item[IEEE 118-Bus System]
+		\end{description}
+	\end{description}
+
+	
+	\subsection{Paper 15}
+	\label{subsec:paper15}
+	
+	Title of paper: A Data-Driven Model of Virtual Power Plants
+	in Day-Ahead Unit Commitment \cite{8598895}
+	
+	\begin{description}
+		\item[Motivation] Ensuring effective integration of distributed energy resources
+		\item[Solution] Virtual power plants: condense them to single entity for wholesale market
+		\item[Problem to solve] Dependence onn distributed pover resources output: time varying and not exactly known at day-ahead UC engine
+		\item[Task of this paper] Evaluating physical characteristics of VPP 
+		\begin{itemize}
+			\item Max capacity
+			\item Ramping capacity
+			\item Encertainty in wind power output
+			\item Load consumption
+		\end{itemize}
+	\end{description}
+	
+	
+	
+	\subsection{Paper 17}
+	\label{subsec:paper17}
+	\begin{description}
+		\item[Motivation] Solving multistage stochastic unit commitment problem
+		\item[Solution] new type of decomposition algorithm (based on new framework of staochastic dual dynamic integre programming)
+		\item[label] description
+	\end{description}
+	
+	\subsection{Paper 21}
+	\label{subsec:paper21}
+	\begin{description}
+		\item[Problem] Uncertainty resulting from integration of variable renewable energy generations (wind-, solar power)
+		\item[label] description
+	\end{description}
+	
+	\subsection{Paper 22}
+	\label{subsec:paper22}
+	notes
+	
+	\newpage
+	
+	%___ZUSAMMENFASSUNg_&_ANHANG__________________________
+
+	
+	%BibTex:Bitte auskommentieren/löschen wenn es nicht benötigt wird.
+	\cite{8603781}
+	
+	
+	\bibliography{uebersicht_paper_ISS}
+	\bibliographystyle {plain}
+	
+	
+\end{document}
